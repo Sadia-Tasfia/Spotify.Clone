@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 
-@container {
-  
+.container {
+  @apply min-h-[76vh] flex bg-black w-[70%]  text-white my-6 mx-auto font-mono rounded-lg p-5
+}
+.songItem{
+  @apply h-12  flex bg-white text-black font-semibold  my-3 mx-0 justify-between items-center rounded-full
+}
+.songInfo img{
+  @apply opacity-0 transition-opacity 
 }
