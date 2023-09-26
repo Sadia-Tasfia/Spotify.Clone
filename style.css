@@ -10,5 +10,5 @@
   @apply h-12  flex bg-white text-black font-semibold  my-3 mx-0 justify-between items-center rounded-full
 }
 .songInfo img{
-  @apply opacity-0 transition-opacity 
+  @apply opacity-0 transition-opacity  p-1
 }
