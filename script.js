@@ -6,6 +6,7 @@ let audioElement = new Audio('songs/1.mp3');
 let masterPlay = document.getElementById("masterPlay");
 let progressBar = document.getElementById("progressBar");
 let gif = document.getElementById("gif");
+let songItem =Array.from(document.getElementsByClassName('songItem'));
 
 let songs = [
   {songName:"warriyo -Mortals", filePath:"songs/1.mp3", coverPath: "cover/1.jpg"},
@@ -19,6 +20,12 @@ let songs = [
   {songName:"Breakup", filePath:"songs/9.mp3", coverPath: "cover/9.jpg"},
 ]
 
+songItem.forEach((element, i)=> {
+  console.log(element,i);
+  element.getElementsByTagName("img")[0].src = songs[i].coverPath;
+  element.getElementsByClassName("songName")[0].innerText = songs[i].songName;
+})
+  
 // audioElement.play();
 
 // handle play/pause click
