@@ -21,7 +21,6 @@ let songs = [
 ]
 
 songItem.forEach((element, i)=> {
-  console.log(element,i);
   element.getElementsByTagName("img")[0].src = songs[i].coverPath;
   element.getElementsByClassName("songName")[0].innerText = songs[i].songName;
 })
@@ -53,4 +52,23 @@ audioElement.addEventListener("timeupdate", ()=> {
 
 progressBar.addEventListener('change',function(){
   audioElement.currentTime = progressBar.value* audioElement.duration/100 ;
+});
+
+// click all button to play & pause
+const makeAllPlays = ()=>{
+  Array.from(document.getElementsByClassName("songItemPlay ")).forEach((element)=>{
+    element.classList.remove("fa-circle-pause");
+    element.classList.add("fa-circle-play");
+  });
+}
+
+Array.from(document.getElementsByClassName("songItemPlay ")).forEach((element)=>{
+  element.addEventListener('click', (e)=>{
+    makeAllPlays();
+    e.target.classList.remove("fa-circle-play");
+    e.target.classList.add("fa-circle-pause");
+    audioElement.src = "songs/3.mp3"; 
+    audioElement.currentTime = 0;
+    audioElement.play();
+  })
 });
